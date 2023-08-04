@@ -1,4 +1,4 @@
-package helper
+package service
 
 import (
 	"os"
@@ -31,6 +31,7 @@ func GetInefficientHosts(data []models.IpConfig) []string {
 		}
 	}
 
+	// make global
 	x := minimumIpAddresses()
 
 	for hostName, activeNum := range activeIPs {

@@ -5,8 +5,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/AdithyanMS/mta-hosting-optimizer/helper"
 	"github.com/AdithyanMS/mta-hosting-optimizer/sample_data"
+	"github.com/AdithyanMS/mta-hosting-optimizer/service"
 )
 
 func InefficientHosts(w http.ResponseWriter, r *http.Request) {
@@ -16,7 +16,7 @@ func InefficientHosts(w http.ResponseWriter, r *http.Request) {
 	}
 
 	data := sample_data.GetSampleData()
-	hosts := helper.GetInefficientHosts(data)
+	hosts := service.GetInefficientHosts(data)
 
 	res, _ := json.Marshal(hosts)
 	w.Header().Set("Content-Type", "application/json")

@@ -29,4 +29,5 @@ func main() {
 
 	fmt.Printf("server running at port %d\n", port)
 	log.Fatal(server.ListenAndServe())
+	fmt.Println("Server shutting down")
 }
